@@ -1,0 +1,2 @@
+# omikuji
+mikujiBot on GAS
