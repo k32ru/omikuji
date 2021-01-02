@@ -53,20 +53,17 @@ function doPost(e){
   var id = data.message.chat.id;
   var name = data.message.chat.first_name + " " + data.message.chat.last_name;
   //var answer = "Hi " + name + ", thank you for your comment " + text;
-  //GmailApp.sendEmail(Session.getEffectiveUser().getEmail(),"Message send to bot",answer); 
   if (data.hasOwnProperty('message')) {
       var msg = data.message;
       var command = deleteAfterAt(msg.text);
      if (msg.hasOwnProperty('entities') &&　msg.entities[0].type == 'bot_command') {
        if(command == '/omikuji'){
-         sendText(id,OmikujiMain());
+         sendText(id,OmikujiMain2());
         }
         if(command == '/set'){
          var text = 'おみくじの内容の編集は以下からできます。 https://docs.google.com/spreadsheets/u/8/d/1FXs8PfEDtD1OE_EOZnafY6tc8o_hsidRz7Gr2Qo6Bw8/edit#gid=0';
          sendText(id,text);
         }
-        
       }
-
    }
 }
